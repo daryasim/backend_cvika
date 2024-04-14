@@ -212,6 +212,10 @@ class TestController extends Controller
         $users = User::all();
         return view('home', ['users' => $users]);
     }
+    public function showForm()
+    {
+        return view('form');
+    }
 
     public function deleteUserFromWeb(int $id)
     {
@@ -240,4 +244,16 @@ class TestController extends Controller
         //3.moznost
         return redirect()->route('home');
     }
+    public function createUser(Request $request)
+    {
+
+            User::create([
+                'meno' => $request->fmeno, // Map 'fname' to 'name' column
+                'email' => $request->femail, // Map 'lname' to 'email' column
+            ]);
+
+
+        return redirect()->route('home');
+    }
+
 }

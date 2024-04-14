@@ -19,4 +19,7 @@ Route::get('/', function () {
 });
 Route::get('/test', [TestController::class, 'test']);
 Route::get('/home', [TestController::class, 'showHome'])->name('home');
+Route::get('/form', [TestController::class, 'showForm'])->name('form');
 Route::get('/delete-user/{id}', [TestController::class, 'deleteUserFromWeb'])->name('delete');
+Route::post('/create-user', [TestController::class, 'createUser'])->name('create');
+

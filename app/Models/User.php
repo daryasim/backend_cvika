@@ -11,6 +11,8 @@ class User extends Model
 {
     use HasFactory;
 
+
+
     /**
      * The table associated with the model.
      *
@@ -19,6 +21,8 @@ class User extends Model
     protected $table = 'user';
 
     protected $fillable = ["meno", "email"];
+
+
 
     public function address(): HasMany
     {
